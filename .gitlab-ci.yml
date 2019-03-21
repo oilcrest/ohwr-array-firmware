@@ -1,0 +1,30 @@
+# see https://hub.docker.com/_/gcc/
+image: ubuntu:16.04
+
+before_script:
+    - apt-get -qq update
+    - apt-get -y install make autoconf  avr-libc gcc-avr git
+
+build_app:
+    stage: build
+    script:
+      - make default_config
+      - make
+    artifacts:
+      paths:
+        - build/main/progfile.hex
+      
+build_bootloader:
+    stage: build
+    script:
+        - cd app/bootloader 
+        - make
+    artifacts:
+       paths:
+        - app/bootloader/Xmega_Bootloader.hex
+
+# run tests using the binary built before
+#test:
+  #stage: test
+  #script:
+    #- ./runmytests.sh
