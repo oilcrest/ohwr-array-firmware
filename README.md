@@ -132,38 +132,3 @@ Switching matrix can be reprogrammed in two ways:
 
    To exit bootloader one should reset the board with PB1 (RESET) button.
 
-Programming with AVR Studio
----------------------------
-
-0) Download firmware from: https://gitlab.cern.ch/skulis/HGCSensorProbeCard/tree/master/fw/build/hex
-
-1) Start AVR Studio 7.0
-
-2) **Tools** -> **Device programming**
-
-a) Select your **Toool** 
-
-b) Select **ATxmega128A1U** as **Device**
-
-c) Select **PDI** as **Interface**
-
-d) Click **Apply**
-
-e) Go to **Device information** and you should see a page shown below:
-
-![device](https://gitlab.cern.ch/skulis/HGCSensorProbeCard/raw/master/doc/img/prog/avr01.png)
-
-3) Go to **Fuses** tab, configure all fields as shown below and click **Program**
-
-![fuses](https://gitlab.cern.ch/skulis/HGCSensorProbeCard/raw/master/doc/img/prog/avr02.png)
-
-4) Go to Memories tab, select **Erace Chip** and click **Erase now**
-
-5) Unselect **Erase Flash before programming**, select **Xmega_Bootloader.hex** file and click **Program** (as shown below).
-
-![boot loader](https://gitlab.cern.ch/skulis/HGCSensorProbeCard/raw/master/doc/img/prog/avr04.png)
-
-6) Select **progfile.hex** file and click **Program** (as shown below).
-
-![program](https://gitlab.cern.ch/skulis/HGCSensorProbeCard/raw/master/doc/img/prog/avr05.png)
-
